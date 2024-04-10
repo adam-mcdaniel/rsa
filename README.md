@@ -65,7 +65,7 @@ int main() {
 
 ## Building
 
-To build your program with the RSA library, simply add it to your include path, [along with the bigint header file](https://github.com/adam-mcdaniel/bigint) and link against the C standard library.
+To build your program with the RSA library, simply add it to your include path, [along with the bigint header file](https://github.com/adam-mcdaniel/bigint), and link against the C standard library.
 
 ```bash
 gcc -I path/to/rsa -I path/to/bigint main.c -o main
