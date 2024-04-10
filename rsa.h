@@ -1,6 +1,5 @@
 #include "bigint.h"
 
-
 bigint gcd(bigint a, bigint b) {
     if (bigint_eqzero(b)) {
         return a;
@@ -49,4 +48,28 @@ char *decrypt_text(bigint *encrypted, int length, bigint d, bigint n) {
     }
     message[length] = '\0';
     return message;
+}
+
+void generate_key_pair(bigint p1, bigint p2, bigint *n, bigint *t, bigint *e, bigint *private_key) {
+    // Calculate the modulus
+    *n = bigint_mul(p1, p2);
+    // Calculate the totient
+    *t = totient(p1, p2);
+
+    // Choose an E value that is relatively prime to (p1 - 1)(p2 - 1)
+    // Choose the largest prime less than 65537
+    bigint public_key = bigint_from_int(65537);
+    if (!bigint_lt(public_key, *t))
+        public_key = bigint_from_int(17);
+    if (!bigint_lt(public_key, *t))
+        public_key = bigint_from_int(5);
+    if (!bigint_lt(public_key, *t))
+        public_key = bigint_from_int(3);
+    if (!bigint_lt(public_key, *t))
+        public_key = bigint_from_int(2);
+
+    *e = public_key;
+
+    // Calculate the private key
+    *private_key = bigint_modinv(public_key, *t);
 }

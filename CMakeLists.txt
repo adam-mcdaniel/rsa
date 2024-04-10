@@ -17,8 +17,8 @@ add_library(rsa INTERFACE rsa.h)
 # Add the CLI test executable to the project
 add_executable(cli cli.c)
 add_executable(rsa-test1 tests/test1.c)
-# add_executable(test2 tests/test2.c)
-# add_executable(test3 tests/test3.c)
+add_executable(rsa-test2 tests/test2.c)
+add_executable(rsa-test3 tests/test3.c)
 
 # Add debug flags
 set(CMAKE_C_FLAGS_DEBUG "-g")
@@ -42,5 +42,5 @@ enable_testing()
 
 # Add the test to the project
 add_test(NAME rsa-test1 COMMAND rsa-test1)
-# add_test(NAME test2 COMMAND test2)
-# add_test(NAME test3 COMMAND test3)
+add_test(NAME rsa-test2 COMMAND rsa-test2)
+add_test(NAME rsa-test3 COMMAND rsa-test3)
