@@ -20,6 +20,9 @@ add_executable(rsa-test1 tests/test1.c)
 add_executable(rsa-test2 tests/test2.c)
 add_executable(rsa-test3 tests/test3.c)
 
+# Add release flags
+set(CMAKE_C_FLAGS_RELEASE "-O3")
+
 # Add debug flags
 set(CMAKE_C_FLAGS_DEBUG "-g")
 
