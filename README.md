@@ -85,6 +85,7 @@ project(HelloWorld)
 add_executable(HelloWorld main.c)
 
 include_directories(path/to/rsa)
+include_directories(path/to/bigint)
 ```
 
 Alternatively, you can use `FetchContent` to download the RSA and Bigint repositories and include them in your project.

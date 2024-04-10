@@ -19,3 +19,15 @@ FetchContent_MakeAvailable(rsa)
 
 # Include the header only library
 include_directories(${rsa_SOURCE_DIR})
+
+# Do the same for the bigint project
+FetchContent_Declare(
+  bigint
+  GIT_REPOSITORY https://github.com/adam-mcdaniel/bigint
+  GIT_TAG        main
+)
+
+FetchContent_MakeAvailable(bigint)
+
+# Include the header only library
+include_directories(${bigint_SOURCE_DIR})
