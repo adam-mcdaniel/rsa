@@ -1,5 +1,7 @@
 # rsa
 
+![Header Image](assets/header.png)
+
 This repository implements the RSA algorithm in C, with arbitarily large integers. The implementation uses [a custom bigint library](https://github.com/adam-mcdaniel/bigint) to handle large key sizes.
 
 The library is header-only, and can be included in any C project.
