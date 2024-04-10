@@ -87,7 +87,7 @@ add_executable(HelloWorld main.c)
 include_directories(path/to/rsa)
 ```
 
-Alternatively, you can use `FetchContent` to download the RSA repository and include it in your project.
+Alternatively, you can use `FetchContent` to download the RSA and Bigint repositories and include them in your project.
 
 ```cmake
 # Import the library from the git repo
@@ -103,6 +103,18 @@ FetchContent_MakeAvailable(rsa)
 
 # Include the header only library
 include_directories(${rsa_SOURCE_DIR})
+
+# Do the same for the bigint project
+FetchContent_Declare(
+  bigint
+  GIT_REPOSITORY https://github.com/adam-mcdaniel/bigint
+  GIT_TAG        main
+)
+
+FetchContent_MakeAvailable(bigint)
+
+# Include the header only library
+include_directories(${bigint_SOURCE_DIR})
 ```
 
 ## License
