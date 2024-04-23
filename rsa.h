@@ -1,3 +1,5 @@
+#ifndef RSA_H
+#define RSA_H
 #include "bigint.h"
 
 bigint gcd(bigint a, bigint b) {
@@ -73,3 +75,4 @@ void generate_key_pair(bigint p1, bigint p2, bigint *n, bigint *t, bigint *e, bi
     // Calculate the private key
     *private_key = bigint_modinv(public_key, *t);
 }
+#endif
